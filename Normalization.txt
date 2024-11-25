@@ -1,0 +1,29 @@
+Normalization
+
+Normalization is a process of organizing data in order to reduce the redundency.
+Single table is divided into multiple tables with related column.
+
+There are six normal forms
+
+1.first normal form
+ - Each cell must contains Single or an atomic value;
+ -No repeating grps;
+ -Each row must be unique;
+2. second normal form
+ -must be in 1nf;
+ -every non prime attributes must be full dependent on primary keys;
+3.Third NF
+ -must be in 2NF
+ -No transitive dependencies. Each non-prime attribute must depend directly on the primary key
+4.Boyce codd NF
+    -3NF
+    Every determinant must be a candidate key.   
+5.Fourth Normal Form (4NF):
+
+Must be in BCNF.
+No multivalued dependencies.
+6.Fifth Normal Form (5NF):
+
+Must be in 4NF.
+No join dependencies.
+
