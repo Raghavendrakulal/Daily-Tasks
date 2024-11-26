@@ -94,3 +94,100 @@ public class Authentication {
         }
     }
 }
+/*
+import java.util.HashMap;
+import java.util.Scanner;
+
+class User {
+    private String username;
+    private String password;
+
+    // Constructor to initialize User object
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    // Getter for username
+    public String getUsername() {
+        return username;
+    }
+
+    // Getter for password
+    public String getPassword() {
+        return password;
+    }
+}
+
+public class UserAuthentication {
+    private static HashMap<String, User> userDatabase = new HashMap<>(); // To store registered users
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\n==== User Authentication ====");
+            System.out.println("1. Sign Up");
+            System.out.println("2. Sign In");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+
+            switch (choice) {
+                case 1:
+                    signUp(scanner);
+                    break;
+                case 2:
+                    signIn(scanner);
+                    break;
+                case 3:
+                    System.out.println("Exiting program...");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void signUp(Scanner scanner) {
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+        if (userDatabase.containsKey(username)) {
+            System.out.println("Username already exists. Try a different one.");
+            return;
+        }
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        // Create a new User object and store it in the database
+        User newUser = new User(username, password);
+        userDatabase.put(username, newUser);
+
+        System.out.println("Sign-up successful! You can now sign in.");
+    }
+
+    private static void signIn(Scanner scanner) {
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        // Check if the username exists in the database
+        if (userDatabase.containsKey(username)) {
+            User user = userDatabase.get(username); // Retrieve the User object
+            if (user.getPassword().equals(password)) {
+                System.out.println("Sign-in successful! Welcome, " + user.getUsername() + "!");
+            } else {
+                System.out.println("Incorrect password. Please try again.");
+            }
+        } else {
+            System.out.println("Username not found. Please sign up first.");
+        }
+    }
+}
+*/
