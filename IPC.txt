@@ -1,0 +1,59 @@
+Interprocess communication
+
+It is a process of communication between two process and sharing data between two in multiprocess environement.
+
+Why IPC is Needed:
+
+Data Sharing: Processes often need to exchange data.
+Synchronization: Ensure processes access shared resources without conflict (e.g., avoiding race conditions).
+Resource Sharing: Facilitate resource management (e.g., shared memory or devices).
+Modular Design: Enable different components of a system to interact independently.
+
+Common IPC
+
+pipes
+shared queue
+shared memory
+scokets 
+semaphores
+
+
+Common IPC Mechanisms:
+Pipes:
+
+Description: Unidirectional communication channel between processes.
+Types:
+Anonymous Pipes: Used between parent and child processes.
+Named Pipes: Can communicate between unrelated processes.
+Example: Linux shell pipelines (|).
+Message Queues:
+
+Description: A queue that allows processes to send and receive messages in a structured way.
+Features: Supports asynchronous communication.
+Use Case: Suitable for exchanging discrete pieces of data.
+Shared Memory:
+
+Description: A segment of memory that multiple processes can access.
+Features: Fast, as no intermediary like a kernel is involved during data transfer.
+Challenge: Requires synchronization mechanisms to avoid conflicts (e.g., semaphores).
+Sockets:
+
+Description: Used for communication between processes over a network or locally.
+Features: Bidirectional, supports distributed systems.
+Example: Client-server model in networking.
+Semaphores:
+
+Description: A signaling mechanism used to manage access to shared resources.
+Use Case: Commonly used for synchronization in shared memory IPC.
+Signals:
+
+Description: Asynchronous notifications sent to a process to indicate events.
+Example: SIGKILL, SIGTERM in Unix systems.
+Remote Procedure Calls (RPCs):
+
+Description: Allows a process to execute a procedure in another process, possibly on a different machine.
+Example: Distributed systems like microservices use RPCs (e.g., gRPC).
+Real-World Applications:
+Operating Systems: Communication between system processes and applications (e.g., scheduling, file I/O).
+Web Servers: Communication between web server processes and backend services.
+Database Systems: Interaction between client applications and the database eng
