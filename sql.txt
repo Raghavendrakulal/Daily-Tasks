@@ -1,0 +1,17 @@
+Drop
+     Normally drop will be used in case where we need to delete a whole database including a structure.
+     This is faster compare to others and when we did it we cant roll back
+     drop table table_name;
+
+delete  
+    It is an DML command it will be used to delete a specific row in a table This will be used with where command
+    It we dont use where command it will delete all the rows
+    It can be rolled back
+    delete from table_name;
+    delete from table_name where name="Kulal";
+Truncate
+    it is DDL command
+    It will be used to delete all the rows in table
+    It is faster than the delete
+    It cant be rolled back
+    Truncate table table_name;
