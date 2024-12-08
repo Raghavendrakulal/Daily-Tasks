@@ -1,0 +1,73 @@
+START SchoolManagementSystem
+
+// Database Initialization
+DATABASE Users = [
+    {id: 1, name: "Admin", role: "admin", password: "1234"},
+    {id: 2, name: "Teacher1", role: "teacher", password: "abcd"},
+    {id: 3, name: "Student1", role: "student", password: "xyz"}
+]
+
+DATABASE Attendance = []
+
+FUNCTION Login(username, password):
+    FOR EACH user IN Users:
+        IF user.name == username AND user.password == password:
+            RETURN user
+    RETURN NULL
+
+FUNCTION AdminMenu():
+    PRINT "1. Add User"
+    PRINT "2. View Attendance"
+    CHOICE = GET INPUT
+    IF CHOICE == 1:
+        CALL AddUser()
+    ELSE IF CHOICE == 2:
+        CALL ViewAttendance()
+
+FUNCTION TeacherMenu():
+    PRINT "1. Mark Attendance"
+    PRINT "2. View Attendance"
+    CHOICE = GET INPUT
+    IF CHOICE == 1:
+        CALL MarkAttendance()
+    ELSE IF CHOICE == 2:
+        CALL ViewAttendance()
+
+FUNCTION AddUser():
+    PRINT "Enter user details (name, role, password)"
+    NEW_USER = GET INPUT
+    APPEND NEW_USER TO Users
+    PRINT "User added successfully."
+
+FUNCTION MarkAttendance():
+    PRINT "Enter student name to mark attendance:"
+    STUDENT_NAME = GET INPUT
+    RECORD = {student: STUDENT_NAME, date: CURRENT_DATE}
+    APPEND RECORD TO Attendance
+    PRINT "Attendance marked."
+
+FUNCTION ViewAttendance():
+    PRINT "Attendance Records:"
+    FOR EACH record IN Attendance:
+        PRINT record
+
+// Main Program
+PRINT "Welcome to School Management System"
+PRINT "Enter username and password:"
+USERNAME = GET INPUT
+PASSWORD = GET INPUT
+
+LOGGED_IN_USER = CALL Login(USERNAME, PASSWORD)
+
+IF LOGGED_IN_USER == NULL:
+    PRINT "Invalid credentials. Exiting."
+    END
+
+IF LOGGED_IN_USER.role == "admin":
+    CALL AdminMenu()
+ELSE IF LOGGED_IN_USER.role == "teacher":
+    CALL TeacherMenu()
+ELSE:
+    PRINT "Access restricted for students."
+
+END SchoolManagementSystem
