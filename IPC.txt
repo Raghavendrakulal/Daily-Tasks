@@ -1,11 +1,13 @@
 Interprocess communication
 
-It is a process of communication between two process and sharing data between two in multiprocess environement.
+It is a process of communication between two process and sharing data between two 
+in multiprocess environement.
 
 Why IPC is Needed:
 
 Data Sharing: Processes often need to exchange data.
-Synchronization: Ensure processes access shared resources without conflict (e.g., avoiding race conditions).
+Synchronization: Ensure processes access shared resources without conflict
+ (e.g., avoiding race conditions).
 Resource Sharing: Facilitate resource management (e.g., shared memory or devices).
 Modular Design: Enable different components of a system to interact independently.
 
@@ -26,11 +28,14 @@ Types:
 Anonymous Pipes: Used between parent and child processes.
 Named Pipes: Can communicate between unrelated processes.
 Example: Linux shell pipelines (|).
+
 Message Queues:
 
 Description: A queue that allows processes to send and receive messages in a structured way.
 Features: Supports asynchronous communication.
 Use Case: Suitable for exchanging discrete pieces of data.
+
+
 Shared Memory:
 
 Description: A segment of memory that multiple processes can access.
