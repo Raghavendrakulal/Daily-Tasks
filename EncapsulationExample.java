@@ -1,7 +1,8 @@
 // Taking an example of bank account
 //private feilds
 //Getter and setter method to access private feilds
-// Encapsulation is process of binding of data and storing classes ,methods,variables in a capsule
+// Encapsulation is process of binding of data and storing classes ,methods,variables 
+//in a capsule
 
 
 class BankAccount {
